@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct FoodlerApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
+  
+  @StateObject var order = Order()
+  
+  var body: some Scene {
+    WindowGroup {
+      MainView()
+        .environmentObject(order)
     }
+  }
 }
